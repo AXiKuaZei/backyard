@@ -1,0 +1,31 @@
+#Other nosense Folders(only apply on gawu's machine)
+
+#Java related ignore
+*.class
+#*.jar
+
+/bin
+/target
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+#################
+## Visual Studio
+#################
+
+## Ignore Visual Studio Code
+.vscode
+## Ignore IDEA
+backyard.iml
+.idea
+out
