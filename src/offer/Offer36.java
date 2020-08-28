@@ -1,5 +1,6 @@
 package offer;
 
+import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
@@ -34,19 +35,42 @@ public class Offer36 {
     }
 
     public Node treeToDoublyList(Node root){
+        List<Node> li = new ArrayList<>();
+        if(root == null) return null;
+        // mid 1 or 2 method
+        mid2(li,root);
         Node dummy = new Node();
-        if(root.left!=null){
-            treeToDoublyList(root.left);
+        Node curr = dummy;
+        for(Node node:li){
+          curr.right = node;
+          node.left = curr;
+          curr = node;  
         }
-        if(root.right!=null){
-            treeToDoublyList(root.right);
-        }
-        return root;
+        curr.right = dummy.right;
+        dummy.right.left = curr;
+        return dummy.right;
     }
 
+
+    /**
+     *   Inorder Traversal 
+     *   Recursive
+     */
+    public void mid(List<Node> li, Node root){
+        if(root.left!=null) mid(li,root.left);
+        li.add(root);
+        if(root.right!=null) mid(li,root.right);
+    }
+
+
+    /**
+     *   Inorder Traversal 
+     *   use a stack
+     */
     public void mid2(List<Node> li, Node root){
-        Deque<Node> stack = new LinkedList();
-        while(stack.isEmpty()){
+        Deque<Node> stack = new LinkedList<>();
+        stack.push(root);
+        while(!stack.isEmpty()){
             while(root.left!=null){
                 stack.push(root);
                 root = root.left;
@@ -63,7 +87,10 @@ public class Offer36 {
 
     }
 
-
+    /**
+     *   class Node
+     */
+    
     class Node {
         public int val;
         public Node left;
