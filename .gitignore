@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Other nosense Folders(only apply on gawu's machine)
 
 #Java related ignore
@@ -26,6 +27,12 @@
 ## Ignore Visual Studio Code
 .vscode
 ## Ignore IDEA
+=======
+#vscode
+.vscode
+
+#idea
+>>>>>>> 6638d26... add git ignore list
 backyard.iml
 .idea
 out
