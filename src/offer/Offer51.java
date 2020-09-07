@@ -12,6 +12,7 @@ public class Offer51 {
         System.out.println(reversePairs(nums));
     }
 
+    //超时啦！！！
     public static int reversePairs(int[] nums) {
         return reversePairs(nums, 0);
     }
