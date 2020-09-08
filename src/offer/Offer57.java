@@ -38,8 +38,18 @@ public class Offer57 {
                 lli.add(li);
             }
         }
-
-        return lli.toArray(new int[lli.size()][]);
+        Integer[][] ans = new Integer[lli.size()][];
+        for(int i=0;i<lli.size();i++){
+            ans[i] = lli.get(i).toArray(new Integer[lli.get(i).size()]);
+        }
+        int[][] ans2 = new int[lli.size()][];
+        for(int i=0;i<ans.length;i++){
+            ans2[i] = new int[ans[i].length];
+            for(int j=0;j<ans[i].length;j++){
+                ans2[i][j] = ans[i][j]; 
+            }
+        }
+        return ans2;
 
     }
 
