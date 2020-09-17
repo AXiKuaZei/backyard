@@ -13,7 +13,6 @@ public class Hello {
 
     int a = 11;
     public static void main(String[] args){
-<<<<<<< HEAD
         Scanner sn = new Scanner(System.in);
         int n = sn.nextInt();
         HashMap<Integer, Node> hm = new HashMap<>();
@@ -64,19 +63,6 @@ public class Hello {
 
         public Node(int _val) {
             val = _val;
-=======
-        String a ="a";
-        String b ="b";
-        System.out.println((a+b)==(a+b));
-        Hello hello = new Hello();
-        NestedHello nestedHello = hello.new NestedHello();
-        nestedHello.hello();
-    }
-
-    public class NestedHello{
-        private void hello(){
-            System.out.println(a);
->>>>>>> 99feef6... x
         }
     }
 }
