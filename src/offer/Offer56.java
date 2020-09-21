@@ -20,8 +20,6 @@ public class Offer56 {
         for(int i:singleNumbers(new int[]{1,2,5,2})){
             System.out.print(i+" ");
         }
-        System.out.println(wwww);
-        System.out.println(2>>1);
     }
 
     public static int[] singleNumbers(int[] nums) {
@@ -51,12 +49,12 @@ public class Offer56 {
                 }
                 if(ansa==0){
                     joler = joler<<1;
-                    for(int i:groupB){
+                    for(int i:groupA){
                         groupC.add(i);
                     }
                 }else if(ansb==0){
                     joler = joler<<1;
-                    for(int i:groupA){
+                    for(int i:groupB){
                         groupC.add(i);
                     }
                 }else{
