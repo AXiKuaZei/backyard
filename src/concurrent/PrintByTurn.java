@@ -16,7 +16,7 @@ public class PrintByTurn {
         t3.start();
     }
 
-    public static class Inner implements Runnable {
+    private static class Inner implements Runnable {
 
         private String msg;
 
@@ -37,9 +37,10 @@ public class PrintByTurn {
                     lock.acquire();
                     Thread.sleep(1000);
                     System.out.println(Thread.currentThread().getName() + "------>" + msg);
-                    nextLock.release();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
+                }finally{
+                    nextLock.release();
                 }
             }
         }
