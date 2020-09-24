@@ -16,7 +16,6 @@ public class Offer56 {
         // for(int i:ans){
         //     System.out.println(i);
         // }
-        int wwww=0;
         for(int i:singleNumbers(new int[]{1,2,5,2})){
             System.out.print(i+" ");
         }
