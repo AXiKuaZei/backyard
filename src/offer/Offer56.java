@@ -12,10 +12,6 @@ import java.util.List;
 public class Offer56 {
     public static void main(String[] args){
         int[] nums = {1,10,4,1,4,3,3};
-        // int[] ans = singleNumbers(nums);
-        // for(int i:ans){
-        //     System.out.println(i);
-        // }
         for(int i:singleNumbers(new int[]{1,2,5,2})){
             System.out.print(i+" ");
         }
