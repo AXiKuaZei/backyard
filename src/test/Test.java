@@ -3,6 +3,7 @@ package test;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 /**
  * 
  6
@@ -12,38 +13,44 @@ import java.util.Scanner;
  */
 public class Test {
     public static void main(String[] args){
-        Scanner sn = new Scanner(System.in);
-        int m = sn.nextInt();
-        int[] mm = new int[m];
-        for(int i=0;i<m;i++){
-            mm[i] = sn.nextInt();
+        String s = "1 2 3 4 5 6 7 8";
+        String[] ss = s.split(" ");
+        //"2001:0db8:85a3:0:0:8A2E:0370:7334"
+        System.out.println(Integer.parseInt("00010"));
+        System.out.println(validIPAddress("f:f:f:f:f:f:f:f"));
+    }
+
+    public static String validIPAddress(String IP) {
+        int len = IP.length();
+        String[] ss;
+        int temp;
+        try{
+            if(len<16 && len>6){
+                ss = IP.split("\\.");
+                for(String s:ss){
+                    temp = Integer.parseInt(s);
+                    System.out.println(temp);
+                    if(temp>255 || temp<0){
+                        return "Neither";
+                    }
+                } 
+                return "IPv4";
+            }else if(len<40 && len>14){
+                ss = IP.split(":");
+                for(String s:ss){
+                    temp = Integer.parseInt(s,16);
+                    if(temp>65535 || temp<0){
+                        return "Neither";
+                    }
+                }                 
+                return "IPv6"; 
+            }else{
+                return "Neither";
+            }            
+        }catch(Exception e){
+            return "Neither";
         }
-        int n = sn.nextInt();
-        int[] nn = new int[n];
-        for(int i=0;i<n;i++){
-            nn[i] = sn.nextInt();
-        }
-        int i=0;
-        int j=0;
-        List<Integer> res = new ArrayList<>();
-        while(i<m && j<n){
-            while(i<m && j<n && mm[i]==nn[j]){
-                res.add(mm[i]);
-                i++;
-                j++;
-            }
-            if(i<m && j<n && mm[i] > nn[j]){
-                i++;
-            }else if(i<m && j<n && mm[i] < nn[j]){
-                j++;
-            }
-        }
-        for(int k=0;k<res.size();k++){
-            System.out.print(res.get(k));
-            if(k!=res.size()-1){
-                System.out.print(" ");
-            }
-        }
+
     }
     
 }
